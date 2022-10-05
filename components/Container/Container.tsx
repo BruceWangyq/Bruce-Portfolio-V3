@@ -65,19 +65,19 @@ export default function Container(props: any) {
           <meta name="robots" content="follow, index" />
           <meta
             property="og:url"
-            content={`https://template.cretu.dev/${router.asPath}`}
+            content={`https://brucewangdev.com/${router.asPath}`}
           />
           <link
             rel="canonical"
-            href={`https://template.cretu.dev/${router.asPath}`}
+            href={`https://brucewangdev.com//${router.asPath}`}
           />
           <meta property="og:type" content={meta.type} />
-          <meta property="og:site_name" content="Cristian Crețu" />
+          <meta property="og:site_name" content="Bruce Wang" />
           <meta property="og:description" content={meta.description} />
           <meta property="og:title" content={meta.title} />
           <meta property="og:image" content={meta.image} />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@cristicrtu" />
+          <meta name="twitter:site" content="@brucewang" />
           <meta name="twitter:title" content={meta.title} />
           <meta name="twitter:description" content={meta.description} />
           <meta name="twitter:image" content={meta.image} />
@@ -91,6 +91,7 @@ export default function Container(props: any) {
             <NavItem href="/" text="Home" />
             <NavItem href="/guestbook" text="Guestbook" />
             <NavItem href="/dashboard" text="Dashboard" />
+            <NavItem href="/explorer" text="Explorer" />
           </div>
           <div className="flex flex-row items-center space-x-4">
             <a

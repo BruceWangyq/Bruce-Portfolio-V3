@@ -1,5 +1,6 @@
 import BigText from "components/BigText";
 import Container from "components/Container";
+import ProjectCard from "components/ProjectCard";
 import Image from "next/image";
 
 export default function Home() {
@@ -33,8 +34,20 @@ export default function Home() {
         </div>
       </div>
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
-        Featured Projects
+        Open-Source Products
       </h3>
+      <div className="flex gap-6 flex-col md:flex-row ">
+        <ProjectCard
+          title="PromiseLand"
+          description="A Instagrame-liked Web3 Social NFT Marketplace."
+          link="http://promiseland.app"
+        />
+        <ProjectCard
+          title="CyberGraph"
+          description="CyberGraph is a 3D-graph based, social connection explorer "
+          link="https://graph.cyberconnect.me/"
+        />
+      </div>
     </Container>
   );
 }
