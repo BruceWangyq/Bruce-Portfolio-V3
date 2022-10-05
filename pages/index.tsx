@@ -27,7 +27,7 @@ export default function Home() {
               src="/bruce.jpeg"
               sizes="30vw"
               priority
-              className="rounded-full filter grayscale"
+              className="rounded-full filter"
             />
           </div>
         </div>

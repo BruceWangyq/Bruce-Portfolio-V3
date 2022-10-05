@@ -1,16 +1,5 @@
 import Link from "next/link";
 
-const ExternalLink = ({ href, children }) => (
-  <a
-    className="text-gray-500 hover:text-gray-600 transition"
-    target="_blank"
-    rel="noopener noreferrer"
-    href={href}
-  >
-    {children}
-  </a>
-);
-
 export default function Footer() {
   return (
     <footer className="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8">
@@ -69,14 +58,9 @@ export default function Footer() {
               Guestbook
             </a>
           </Link>
-          <Link href="/snippets">
+          <Link href="/dashboard">
             <a className="text-gray-500 hover:text-gray-600 transition">
-              Snippets
-            </a>
-          </Link>
-          <Link href="/tweets">
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Tweets
+              Dashboard
             </a>
           </Link>
         </div>
