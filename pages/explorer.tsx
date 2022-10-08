@@ -1,23 +1,46 @@
 import Container from "components/Container";
-import React from "react";
-import useSWR from "swr";
+import React, { useEffect, useState } from "react";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import { useAccount } from "wagmi";
+
+import NFTCard from "components/NFTCard";
+import { TextField } from "@mui/material";
 
 export default function explorer() {
-  const { data, error } = useSWR(
-    `https://eth-mainnet.alchemyapi.io/v2/${
-      process.env.NEXT_PUBLIC_ALCHEMY_ID
-    }/getNFTs/?owner=${"0x8ff7f00fc3888387e7459785f73769999a65cd57"}`,
-    fetcher
-  );
+  const { address } = useAccount();
+  const [selectAddress, setSelectAddress] =
+    useState<string>("brucewangdev.eth");
+  const [input, setInput] = useState<string>("");
 
-  console.log(data);
-  if (error) return "An error has occurred.";
-  if (!data) return "Loading...";
+  const handleChange = () => {
+    if (input !== "") {
+      setSelectAddress(input);
+    }
+    setSelectAddress(input);
+  };
+  useEffect(() => {
+    if (address) {
+      setSelectAddress(address);
+    }
+  }, [address]);
+
+  console.log("selectAddress", selectAddress);
+
   return (
     <Container>
       <div>explorer</div>
+      <TextField
+        id="outlined-name"
+        label="Address"
+        placeholder="Search Token"
+        onChange={(e) => setInput(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            setSelectAddress(input);
+          }
+        }}
+      />
+      <NFTCard address={selectAddress} />
     </Container>
   );
 }
