@@ -5,6 +5,7 @@ import { useAccount } from "wagmi";
 
 import NFTCard from "components/NFTCard";
 import { TextField } from "@mui/material";
+import PoapCard from "components/PoapCard";
 
 export default function explorer() {
   const { address } = useAccount();
@@ -12,12 +13,6 @@ export default function explorer() {
     useState<string>("brucewangdev.eth");
   const [input, setInput] = useState<string>("");
 
-  const handleChange = () => {
-    if (input !== "") {
-      setSelectAddress(input);
-    }
-    setSelectAddress(input);
-  };
   useEffect(() => {
     if (address) {
       setSelectAddress(address);
@@ -41,6 +36,7 @@ export default function explorer() {
         }}
       />
       <NFTCard address={selectAddress} />
+      <PoapCard />
     </Container>
   );
 }
