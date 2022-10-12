@@ -33,8 +33,8 @@ export const useUserNFTs = (address: string) => {
   const data = useMemo(() => {
     if (!raw) return undefined;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const nfts: NFT[][] = raw.map((each: { nfts: any[] }) =>
-      each.nfts.map(
+    const nfts: NFT[][] = raw?.map((each: { nfts: any[] }) =>
+      each?.nfts?.map(
         (nft) =>
           ({
             contractAddress: nft.contract_address,

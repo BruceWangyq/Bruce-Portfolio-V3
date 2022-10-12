@@ -25,28 +25,27 @@ export default function NFTCard({ address }: { address: string }) {
     <div className="flex flex-row">
       {nfts?.length && (
         <div className="grid grid-cols-8 gap-4">
-          {nfts &&
-            nfts?.map((_nfts) =>
-              _nfts?.map((nft) => (
-                <Link
-                  href={`https://opensea.io/assets/${nft.contractAddress}/${nft.tokenId}`}
-                  key={`${nft.contractAddress}.${nft.tokenId}`}
-                >
-                  <a>
-                    <div className="relative aspect-square">
-                      <img
-                        className="h-full w-full object-cover"
-                        src={
-                          nft.fileUrl ||
-                          `https://static.thenounproject.com/png/583402-200.png`
-                        }
-                        alt={`${nft.contractAddress}.${nft.tokenId}`}
-                      />
-                    </div>
-                  </a>
-                </Link>
-              ))
-            )}
+          {nfts?.map((_nfts) =>
+            _nfts?.map((nft) => (
+              <Link
+                href={`https://opensea.io/assets/${nft.contractAddress}/${nft.tokenId}`}
+                key={`${nft.contractAddress}.${nft.tokenId}`}
+              >
+                <a>
+                  <div className="relative aspect-square">
+                    <img
+                      className="h-full w-full object-cover"
+                      src={
+                        nft.fileUrl ||
+                        `https://static.thenounproject.com/png/583402-200.png`
+                      }
+                      alt={`${nft.contractAddress}.${nft.tokenId}`}
+                    />
+                  </div>
+                </a>
+              </Link>
+            ))
+          )}
         </div>
       )}
       <div className="py-4 text-center">

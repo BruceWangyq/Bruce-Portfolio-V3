@@ -9,8 +9,9 @@ import PoapCard from "components/PoapCard";
 
 export default function explorer() {
   const { address } = useAccount();
-  const [selectAddress, setSelectAddress] =
-    useState<string>("brucewangdev.eth");
+  const [selectAddress, setSelectAddress] = useState<string>(
+    "0x7dC592ED3Ad7335Cf893D71C259D65C4704608ef"
+  );
   const [input, setInput] = useState<string>("");
 
   useEffect(() => {
