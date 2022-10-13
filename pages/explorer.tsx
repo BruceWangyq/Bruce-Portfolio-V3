@@ -4,8 +4,9 @@ import React, { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
 
 import NFTCard from "components/NFTCard";
-import { TextField } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 import PoapCard from "components/PoapCard";
+import NftsCard from "components/NftsCard";
 
 export default function explorer() {
   const { address } = useAccount();
@@ -24,7 +25,10 @@ export default function explorer() {
 
   return (
     <Container>
-      <div>explorer</div>
+      <Typography variant="h4" className="my-4">
+        Explorer
+      </Typography>
+
       <TextField
         id="outlined-name"
         label="Address"
@@ -36,8 +40,9 @@ export default function explorer() {
           }
         }}
       />
-      <NFTCard address={selectAddress} />
-      <PoapCard />
+      <NftsCard selectAddress={selectAddress} />
+      {/* <NFTCard address={selectAddress} /> */}
+      <PoapCard selectAddress={selectAddress} />
     </Container>
   );
 }

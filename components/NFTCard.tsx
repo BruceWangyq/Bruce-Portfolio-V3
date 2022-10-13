@@ -22,9 +22,9 @@ export default function NFTCard({ address }: { address: string }) {
   console.log(nfts);
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-col">
       {nfts?.length && (
-        <div className="grid grid-cols-8 gap-4">
+        <div className="grid grid-cols-8 gap-4 my-4 ">
           {nfts?.map((_nfts) =>
             _nfts?.map((nft) => (
               <Link
@@ -32,9 +32,9 @@ export default function NFTCard({ address }: { address: string }) {
                 key={`${nft.contractAddress}.${nft.tokenId}`}
               >
                 <a>
-                  <div className="relative aspect-square">
+                  <div className="relative aspect-square ">
                     <img
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover rounded-lg"
                       src={
                         nft.fileUrl ||
                         `https://static.thenounproject.com/png/583402-200.png`
