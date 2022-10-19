@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { useTheme } from "next-themes";
-import { useRouter } from "next/dist/client/router";
-import Head from "next/head";
-import Link from "next/link";
+import { useTheme } from 'next-themes';
+import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
+import Link from 'next/link';
 
-import Footer from "components/Footer/Footer";
-import cn from "lib/classNames";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import Footer from 'src/components/Footer/Footer';
+import cn from 'src/lib/classNames';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 function NavItem({ href, text }: { href: string; text: string }) {
   const router = useRouter();
@@ -18,9 +18,9 @@ function NavItem({ href, text }: { href: string; text: string }) {
       <a
         className={cn(
           isActive
-            ? "font-semibold text-gray-800 dark:text-gray-200"
-            : "font-normal text-gray-600 dark:text-gray-400",
-          "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+            ? 'font-semibold text-gray-800 dark:text-gray-200'
+            : 'font-normal text-gray-600 dark:text-gray-400',
+          'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all',
         )}
       >
         <span className="capsize">{text}</span>
@@ -38,12 +38,12 @@ export default function Container(props: any) {
   const router = useRouter();
 
   const meta = {
-    title: "Bruce Wang - Developer, Creator, Builder",
+    title: 'Bruce Wang - Developer, Creator, Builder',
     description:
-      "Front-end developer, Blockchain Developer, and content creator.",
+      'Front-end developer, Blockchain Developer, and content creator.',
     image:
-      "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/cat-face_1f431.png",
-    type: "website",
+      'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/cat-face_1f431.png',
+    type: 'website',
     ...customMeta,
   };
 
@@ -55,10 +55,10 @@ export default function Container(props: any) {
     <>
       <div
         className={cn(
-          "text-primary",
-          "relative h-full min-h-screen w-full",
-          "flex flex-col",
-          "motion-reduce:transition-none motion-reduce:transform-none"
+          'text-primary',
+          'relative h-full min-h-screen w-full',
+          'flex flex-col',
+          'motion-reduce:transition-none motion-reduce:transform-none',
         )}
       >
         <Head>
@@ -117,7 +117,7 @@ export default function Container(props: any) {
               type="button"
               className="flex items-center justify-center transition-all bg-gray-200 rounded-lg w-9 h-9 dark:bg-gray-600 hover:ring-2 ring-gray-300"
               onClick={() =>
-                setTheme(resolvedTheme === "dark" ? "light" : "dark")
+                setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
               }
             >
               {mounted && (
@@ -128,7 +128,7 @@ export default function Container(props: any) {
                   stroke="currentColor"
                   className="w-5 h-5 text-gray-800 dark:text-gray-200"
                 >
-                  {resolvedTheme === "dark" ? (
+                  {resolvedTheme === 'dark' ? (
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -152,12 +152,12 @@ export default function Container(props: any) {
 
         <main
           className={cn(
-            "px-4 mt-12",
-            "max-w-2xl",
-            "mx-auto my-auto",
-            "flex flex-col justify-center gap-12",
-            "divide-y divide-gray-200 dark:divide-gray-900",
-            "rounded-lg"
+            'px-4 mt-12',
+            'max-w-2xl',
+            'mx-auto my-auto',
+            'flex flex-col justify-center gap-12',
+            'divide-y divide-gray-200 dark:divide-gray-900',
+            'rounded-lg',
           )}
         >
           <div>{children}</div>

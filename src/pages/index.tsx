@@ -1,7 +1,7 @@
-import BigText from "components/BigText";
-import Container from "components/Container";
-import ProjectCard from "components/ProjectCard";
-import Image from "next/image";
+import BigText from 'src/components/BigText';
+import Container from 'src/components/Container';
+import ProjectCard from 'src/components/ProjectCard';
+import Image from 'next/image';
 
 export default function Home() {
   return (

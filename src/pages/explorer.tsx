@@ -1,12 +1,12 @@
-import Container from 'components/Container';
+import Container from 'src/components/Container';
 import React, { useEffect, useState } from 'react';
 
 import { useAccount } from 'wagmi';
 
-import NFTCard from 'components/NFTCard';
+import NFTCard from 'src/components/NFTCard';
 import { TextField, Typography } from '@mui/material';
-import PoapCard from 'components/PoapCard';
-import NftsCard from 'components/NftsCard';
+import PoapCard from 'src/components/PoapCard';
+import NftsCard from 'src/components/NftsCard';
 
 export default function explorer() {
   const { address } = useAccount();

@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
 
-import 'styles/globals.css';
+import 'src/styles/globals.css';
 import '@rainbow-me/rainbowkit/styles.css';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
