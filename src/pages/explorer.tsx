@@ -18,6 +18,12 @@ export default function explorer() {
 
   console.log('selectAddress', selectAddress);
 
+  useEffect(() => {
+    if (address) {
+      setSelectAddress(address);
+    }
+  }, [address]);
+
   return (
     <Container>
       <Typography variant="h5" className="my-4 font-bold">
