@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -58,9 +58,9 @@ export default function Footer() {
               Guestbook
             </a>
           </Link>
-          <Link href="/dashboard">
+          <Link href="https://github.com/BruceWangyq/Bruce-Portfolio-V3">
             <a className="text-gray-500 hover:text-gray-600 transition">
-              Dashboard
+              The Repo
             </a>
           </Link>
         </div>

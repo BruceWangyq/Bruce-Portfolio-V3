@@ -3,4 +3,5 @@ export interface NFT {
   tokenId: string;
   owner: string;
   fileUrl?: string;
+  name?: string;
 }

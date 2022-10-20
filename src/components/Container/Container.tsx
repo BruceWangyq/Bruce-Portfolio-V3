@@ -90,7 +90,6 @@ export default function Container(props: any) {
           <div className="flex flex-row gap-1 text-tertiary">
             <NavItem href="/" text="Home" />
             <NavItem href="/guestbook" text="Guestbook" />
-            <NavItem href="/dashboard" text="Dashboard" />
             <NavItem href="/explorer" text="Explorer" />
           </div>
           <div className="flex flex-row items-center space-x-4">
@@ -146,7 +145,7 @@ export default function Container(props: any) {
                 </svg>
               )}
             </button>
-            <ConnectButton />
+            <ConnectButton showBalance={false} />
           </div>
         </nav>
 

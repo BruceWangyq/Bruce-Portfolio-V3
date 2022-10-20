@@ -1,7 +1,7 @@
 import Container from 'src/components/Container';
 import React, { useEffect, useState } from 'react';
 
-import { useAccount } from 'wagmi';
+import { useAccount, useEnsName } from 'wagmi';
 
 import NFTCard from 'src/components/NFTCard';
 import { TextField, Typography } from '@mui/material';
@@ -14,12 +14,7 @@ export default function explorer() {
     '0x7dC592ED3Ad7335Cf893D71C259D65C4704608ef',
   );
   const [input, setInput] = useState<string>('');
-
-  useEffect(() => {
-    if (address) {
-      setSelectAddress(address);
-    }
-  }, [address]);
+  const { data: ens } = useEnsName({ address: selectAddress });
 
   console.log('selectAddress', selectAddress);
 
@@ -28,10 +23,9 @@ export default function explorer() {
       <Typography variant="h5" className="my-4 font-bold">
         Explorer
       </Typography>
-
       <TextField
         id="outlined-name"
-        label="Address or ENS"
+        label="Search an Address"
         placeholder="Search Token"
         onChange={(e) => setInput(e.target.value)}
         className="w-1/2 rounded-lg"
@@ -41,12 +35,16 @@ export default function explorer() {
           }
         }}
       />
-      <Typography variant="body1" className="my-4">
-        User: {selectAddress}
+      <Typography variant="body1" className="font-semibold text-gray-500 my-4">
+        Address: {selectAddress}
       </Typography>
-
-      <NftsCard selectAddress={selectAddress} />
-      {/* <NFTCard address={selectAddress} /> */}
+      {ens && (
+        <Typography variant="body1" className="font-bold">
+          {ens}
+        </Typography>
+      )}
+      {/* <NftsCard selectAddress={selectAddress} /> */}
+      <NFTCard address={selectAddress} />
       <PoapCard selectAddress={selectAddress} />
     </Container>
   );

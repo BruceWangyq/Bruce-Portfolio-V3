@@ -1,4 +1,3 @@
-import BigText from 'src/components/BigText';
 import Container from 'src/components/Container';
 import ProjectCard from 'src/components/ProjectCard';
 import Image from 'next/image';
