@@ -30,7 +30,7 @@ export default function Footer() {
               Twitter
             </a>
           </Link>
-          <Link href="https://github.com/brucewangdev">
+          <Link href="https://github.com/brucewangyq">
             <a
               className="text-gray-500 hover:text-gray-600 transition"
               target="_blank"
@@ -50,21 +50,28 @@ export default function Footer() {
           </Link>
         </div>
         <div className="flex flex-col space-y-4">
-          <Link href="/uses">
-            <a className="text-gray-500 hover:text-gray-600 transition">Uses</a>
+          <Link href="/explorer">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Explorer
+            </a>
           </Link>
           <Link href="/guestbook">
             <a className="text-gray-500 hover:text-gray-600 transition">
               Guestbook
             </a>
           </Link>
-          <Link href="https://github.com/BruceWangyq/Bruce-Portfolio-V3">
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              The Repo
-            </a>
-          </Link>
         </div>
       </div>
+      <p className="text-gray-500 hover:text-gray-600 transition text-center">
+        This site is{' '}
+        <Link href="https://github.com/BruceWangyq/Bruce-Portfolio-V3">
+          <a target={'_blank'}>open-soured</a>
+        </Link>{' '}
+        and inspired by{' '}
+        <Link href="https://leerob.io/">
+          <a target={'_blank'}>leerob.io</a>
+        </Link>
+      </p>
     </footer>
   );
 }

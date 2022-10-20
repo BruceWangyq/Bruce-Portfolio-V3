@@ -31,12 +31,11 @@ export default function explorer() {
       <Typography variant="h5" className="my-4 font-bold">
         Explorer
       </Typography>
-      <TextField
+      <input
         id="outlined-name"
-        label="Search an Address"
-        placeholder="Search Token"
+        placeholder="Search an Address"
         onChange={(e) => setInput(e.target.value)}
-        className="w-1/2 rounded-lg"
+        className="rounded-lg w-1/2 h-12 border-2 border-gray-300 px-4"
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             setSelectAddress(input);

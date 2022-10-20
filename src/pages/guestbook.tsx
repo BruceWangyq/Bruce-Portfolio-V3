@@ -42,20 +42,22 @@ export default function guestbook() {
       <Typography variant="h5" className="my-4 font-bold">
         Guest Book
       </Typography>
+      <Typography variant="body2" className="my-4 font-bold text-gray-500">
+        Share a on-chain message for a future visitor of my site.
+      </Typography>
 
-      <form onSubmit={handleSubmit}>
-        <TextField
+      <form onSubmit={handleSubmit} className="flex flex-row my-4">
+        <input
           required
-          id="message"
-          fullWidth
           value={newMessage}
           placeholder="Write a message"
           onChange={(e) => setNewMessage(e.target.value)}
+          className="rounded-lg w-1/2 h-12 border-2 border-gray-300 px-4"
         />
         <Button
           disabled={!write || isLoading}
           type="submit"
-          className="bg-blue-600 hover:bg-blue-500 text-white hover:text-gray-100 rounded-lg px-4 py-2 mt-4"
+          className="bg-blue-600 hover:bg-blue-500 text-white hover:text-gray-100 rounded-lg mx-4 font-bold"
         >
           {isLoading ? 'Loading...' : 'Send'}
         </Button>
@@ -64,14 +66,11 @@ export default function guestbook() {
       {mounted &&
         allMessages?.map((message: any, index: number) => {
           return (
-            <div
-              key={index}
-              className="flex flex-col border rounded-sm border-spacing-1 m-1 p-1 shadow-sm"
-            >
-              <Typography className="m-1">
-                Message: {message?.message}
+            <div key={index} className="flex flex-col  my-2 p-1 ">
+              <Typography variant="body1" className="m-1 font-bold">
+                {message?.message}
               </Typography>
-              <Typography className="m-1">
+              <Typography className="m-1 font-semibold text-gray-500 dark:text-gray-400">
                 From: {truncatedAddress(message.sender)}
               </Typography>
             </div>
