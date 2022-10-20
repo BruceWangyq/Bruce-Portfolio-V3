@@ -16,7 +16,8 @@ export default function explorer() {
   const [input, setInput] = useState<string>('');
   const { data: ens } = useEnsName({ address: selectAddress });
 
-  console.log('selectAddress', selectAddress);
+  const truncatedAddress =
+    selectAddress?.slice(0, 6) + '...' + selectAddress?.slice(-4);
 
   useEffect(() => {
     if (address) {
@@ -42,7 +43,7 @@ export default function explorer() {
         }}
       />
       <Typography variant="body1" className="font-semibold text-gray-500 my-4">
-        Address: {selectAddress}
+        Address: {ens || truncatedAddress}
       </Typography>
       {ens && (
         <Typography variant="body1" className="font-bold">
