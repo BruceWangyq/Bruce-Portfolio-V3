@@ -1,7 +1,7 @@
 import Container from 'src/components/Container';
 import React, { useEffect, useState } from 'react';
 
-import { useAccount, useEnsName } from 'wagmi';
+import { useAccount, useEnsAvatar, useEnsName } from 'wagmi';
 
 import NFTCard from 'src/components/NFTCard';
 import { TextField, Typography } from '@mui/material';
@@ -9,12 +9,13 @@ import PoapCard from 'src/components/PoapCard';
 import NftsCard from 'src/components/NftsCard';
 
 export default function explorer() {
-  const { address } = useAccount();
+  const { address, isConnected } = useAccount();
   const [selectAddress, setSelectAddress] = useState<string>(
     '0x7dC592ED3Ad7335Cf893D71C259D65C4704608ef',
   );
   const [input, setInput] = useState<string>('');
   const { data: ens } = useEnsName({ address: selectAddress });
+  const { data: ensAvatar } = useEnsAvatar({ addressOrName: address });
 
   const truncatedAddress =
     selectAddress?.slice(0, 6) + '...' + selectAddress?.slice(-4);
@@ -42,6 +43,7 @@ export default function explorer() {
           }
         }}
       />
+
       <Typography variant="body1" className="font-semibold text-gray-500 my-4">
         Address: {ens || truncatedAddress}
       </Typography>

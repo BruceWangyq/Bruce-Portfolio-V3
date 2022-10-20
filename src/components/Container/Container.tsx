@@ -90,6 +90,7 @@ export default function Container(props: any) {
           <div className="flex flex-row gap-1 text-tertiary">
             <NavItem href="/" text="Home" />
             <NavItem href="/guestbook" text="Guestbook" />
+
             <NavItem href="/explorer" text="Explorer" />
           </div>
           <div className="flex flex-row items-center space-x-4">
@@ -152,7 +153,7 @@ export default function Container(props: any) {
         <main
           className={cn(
             'px-4 mt-12',
-            'max-w-2xl',
+            'max-w-2xl w-full',
             'mx-auto my-auto',
             'flex flex-col justify-center gap-12',
             'divide-y divide-gray-200 dark:divide-gray-900',

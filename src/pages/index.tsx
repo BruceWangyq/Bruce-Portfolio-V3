@@ -11,7 +11,7 @@ export default function Home() {
             <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
               Bruce Wang
             </h1>
-            <h2 className="text-gray-700 dark:text-gray-200 mb-4">
+            <h2 className="text-gray-700 dark:text-gray-200 my-4">
               Frontend/ Blockchain Developer
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-16">
@@ -40,11 +40,13 @@ export default function Home() {
           title="PromiseLand"
           description="A Instagrame-liked Web3 Social NFT Marketplace."
           link="http://promiseland.app"
+          icon="🌈"
         />
         <ProjectCard
           title="CyberGraph"
           description="CyberGraph is a 3D-graph based, social connection explorer "
           link="https://graph.cyberconnect.me/"
+          icon="🌐"
         />
       </div>
     </Container>
