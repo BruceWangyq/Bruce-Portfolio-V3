@@ -9,14 +9,14 @@ export default function Footer() {
           <Link href="/">
             <a className="text-gray-500 hover:text-gray-600 transition">Home</a>
           </Link>
-          <Link href="/about">
+          <Link href="/https://www.linkedin.com/in/brucewangdev/">
             <a className="text-gray-500 hover:text-gray-600 transition">
-              About
+              LinkedIn
             </a>
           </Link>
-          <Link href="/newsletter">
+          <Link href="mailto: brucewangyq@gmail.com">
             <a className="text-gray-500 hover:text-gray-600 transition">
-              Newsletter
+              Contact
             </a>
           </Link>
         </div>
@@ -62,14 +62,18 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <p className="text-gray-500 hover:text-gray-600 transition text-center">
+      <p className="text-gray-500 transition text-center">
         This site is{' '}
         <Link href="https://github.com/BruceWangyq/Bruce-Portfolio-V3">
-          <a target={'_blank'}>open-soured</a>
+          <a target={'_blank'} className="hover:text-gray-400">
+            open-soured
+          </a>
         </Link>{' '}
         and inspired by{' '}
         <Link href="https://leerob.io/">
-          <a target={'_blank'}>leerob.io</a>
+          <a target={'_blank'} className="hover:text-gray-400">
+            leerob.io
+          </a>
         </Link>
       </p>
     </footer>
