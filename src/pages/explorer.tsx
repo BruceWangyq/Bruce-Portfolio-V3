@@ -4,12 +4,10 @@ import React, { useEffect, useState } from 'react';
 import { useAccount, useEnsAvatar, useEnsName } from 'wagmi';
 
 import NFTCard from 'src/components/NFTCard';
-import { TextField, Typography } from '@mui/material';
-import PoapCard from 'src/components/PoapCard';
-import NftsCard from 'src/components/NftsCard';
+import { Typography } from '@mui/material';
 
 export default function explorer() {
-  const { address, isConnected } = useAccount();
+  const { address } = useAccount();
   const [selectAddress, setSelectAddress] = useState<string>(
     '0x7dC592ED3Ad7335Cf893D71C259D65C4704608ef',
   );
@@ -53,7 +51,6 @@ export default function explorer() {
       )}
       {/* <NftsCard selectAddress={selectAddress} /> */}
       <NFTCard address={selectAddress} />
-      <PoapCard selectAddress={selectAddress} />
     </Container>
   );
 }

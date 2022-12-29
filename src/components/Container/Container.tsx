@@ -86,11 +86,10 @@ export default function Container(props: any) {
           )}
         </Head>
 
-        <nav className="sticky w-full bg-gray-100/40 z-[1] filter-blur dark:bg-gray-1000/40 top-2 md:top-4 max-w-2xl px-4 py-2 rounded-md mx-auto flex justify-between items-center">
+        <nav className="sticky w-full bg-gray-100/40 z-[1] filter-blur dark:bg-gray-1000/40 top-2 md:top-4 max-w-2xl px-4 py-2 rounded-md mx-auto flex justify-between items-center border-4">
           <div className="flex flex-row gap-1 text-tertiary">
             <NavItem href="/" text="Home" />
             <NavItem href="/guestbook" text="Guestbook" />
-
             <NavItem href="/explorer" text="Explorer" />
           </div>
           <div className="flex flex-row items-center space-x-4">
