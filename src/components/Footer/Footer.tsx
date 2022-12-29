@@ -60,6 +60,16 @@ export default function Footer() {
               Guestbook
             </a>
           </Link>
+          <Link href="/timeline">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Timeline
+            </a>
+          </Link>
+          <Link href="https://cal.com/brucewang/30min">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Let's Chat!
+            </a>
+          </Link>
         </div>
       </div>
       <p className="text-gray-500 transition text-center">

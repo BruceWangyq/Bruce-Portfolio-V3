@@ -57,7 +57,7 @@ export default function Home() {
         </div>
       </div>
 
-      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
+      <h3 className="font-bold text-2xl md:text-3xl tracking-tight mb-6 text-black dark:text-white">
         Projects
       </h3>
       <div className="flex gap-6 flex-col md:flex-row ">
@@ -74,9 +74,11 @@ export default function Home() {
           icon="🌐"
         />
       </div>
-
+      <h3 className="font-bold text-2xl md:text-3xl tracking-tight mt-6 mb-4 text-black dark:text-white">
+        Timeline
+      </h3>
       <ol className="relative border-l border-gray-200 dark:border-gray-700 my-8">
-        <li className="mb-10 ml-4">
+        <li className="mb-8 ml-4">
           <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
           <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             Spetmebr 2022 - Present
@@ -84,11 +86,11 @@ export default function Home() {
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             Hacker and Learner
           </h3>
-          <p className="my-2 text-base font-normal text-gray-500 dark:text-gray-400">
-            EthOnline Hackathon - PromiseLand.App
+          <p className="my-2 font-normal text-gray-500 dark:text-gray-400">
+            - EthOnline Hackathon - PromiseLand.App
           </p>
-          <p className="my-2 text-base font-normal text-gray-500 dark:text-gray-400">
-            EthToronto Hackathon - Rentable Portocol
+          <p className="my-2 font-normal text-gray-500 dark:text-gray-400">
+            - EthToronto Hackathon - Rentable Portocol
           </p>
           {/* <a
             href="#"
@@ -109,7 +111,7 @@ export default function Home() {
             </svg>
           </a> */}
         </li>
-        <li className="mb-10 ml-4">
+        <li className="mb-8 ml-4">
           <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
           <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             January 2022 - Augest 2022
@@ -117,9 +119,14 @@ export default function Home() {
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             Developer Evanglist in CyberConnect
           </h3>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400"></p>
+          <p className="my-2 font-normal text-gray-500 dark:text-gray-400">
+            - Built CyberGraph, a 3D-graph based, social connection explorer.
+          </p>
+          <p className="my-2 font-normal text-gray-500 dark:text-gray-400">
+            - Hosted Gitcoin GR12, GR13, EthShanghai Hackathon.
+          </p>
         </li>
-        <li className="ml-4">
+        {/* <li className="ml-4">
           <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
           <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             2016 -2018
@@ -128,10 +135,10 @@ export default function Home() {
             University of Ottawa, Department of Engineering
           </h3>
           <p className="text-base font-normal text-gray-500 dark:text-gray-400"></p>
-        </li>
+        </li> */}
       </ol>
 
-      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white mt-12">
+      <h3 className="font-bold text-2xl md:text-3xl tracking-tight mb-6 text-black dark:text-white mt-12">
         Content Creation
       </h3>
       <iframe
