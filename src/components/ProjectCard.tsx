@@ -13,7 +13,7 @@ export default function ProjectCard({
 }) {
   return (
     <a className="group block w-72 h-44" href={link} target="_blank">
-      <div className="relative flex h-full items-end rounded-3xl border-4 border-black bg-white dark:border-white dark:bg-black p-8 transition group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#000] dark:group-hover:shadow-[8px_8px_0_0_#fff]">
+      <div className="relative flex h-full items-end rounded-3xl border-2 border-black bg-white dark:border-white dark:bg-black p-8 transition group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#000] dark:group-hover:shadow-[8px_8px_0_0_#fff]">
         <div className="lg:group-hover:absolute lg:group-hover:opacity-0">
           <span className="text-3xl sm:text-4xl" role="img" aria-hidden="true">
             {icon}
