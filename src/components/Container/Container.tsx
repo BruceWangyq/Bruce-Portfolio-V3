@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 import Footer from 'src/components/Footer/Footer';
 import cn from 'src/lib/classNames';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ConnectButton, lightTheme } from '@rainbow-me/rainbowkit';
 
 function NavItem({ href, text }: { href: string; text: string }) {
   const router = useRouter();

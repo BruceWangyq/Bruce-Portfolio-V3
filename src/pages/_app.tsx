@@ -3,7 +3,11 @@ import type { AppProps } from 'next/app';
 
 import 'src/styles/globals.css';
 import '@rainbow-me/rainbowkit/styles.css';
-import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+  darkTheme,
+} from '@rainbow-me/rainbowkit';
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
@@ -31,13 +35,20 @@ const wagmiClient = createClient({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <StyledEngineProvider injectFirst>
-      <WagmiConfig client={wagmiClient}>
-        <RainbowKitProvider chains={chains}>
-          <ThemeProvider attribute="class" disableTransitionOnChange>
+      <ThemeProvider attribute="class" disableTransitionOnChange>
+        <WagmiConfig client={wagmiClient}>
+          <RainbowKitProvider
+            chains={chains}
+            theme={darkTheme({
+              accentColor: 'white',
+              borderRadius: 'large',
+              accentColorForeground: 'black',
+            })}
+          >
             <Component {...pageProps} />
-          </ThemeProvider>
-        </RainbowKitProvider>
-      </WagmiConfig>
+          </RainbowKitProvider>
+        </WagmiConfig>
+      </ThemeProvider>
     </StyledEngineProvider>
   );
 }
