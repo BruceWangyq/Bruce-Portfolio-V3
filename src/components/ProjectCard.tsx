@@ -26,7 +26,7 @@ export default function ProjectCard({
             {title}
           </h2>
 
-          <p className="mt-4 text-lg font-medium leading-relaxed">
+          <p className="mt-4 text-sm font-medium leading-relaxed">
             {description}
           </p>
         </div>
