@@ -13,7 +13,6 @@ export default function explorer() {
   );
   const [input, setInput] = useState<string>('');
   const { data: ens } = useEnsName({ address: selectAddress });
-  const { data: ensAvatar } = useEnsAvatar({ addressOrName: address });
 
   const truncatedAddress =
     selectAddress?.slice(0, 6) + '...' + selectAddress?.slice(-4);
