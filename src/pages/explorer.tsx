@@ -8,7 +8,7 @@ import { Typography } from '@mui/material';
 
 export default function explorer() {
   const { address } = useAccount();
-  const [selectAddress, setSelectAddress] = useState<string>(
+  const [selectAddress, setSelectAddress] = useState<any>(
     '0x7dC592ED3Ad7335Cf893D71C259D65C4704608ef',
   );
   const [input, setInput] = useState<string>('');
