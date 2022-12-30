@@ -29,27 +29,25 @@ export default function NftsCard({ selectAddress }: { selectAddress: string }) {
               }/${parseInt(nft.id.tokenId, 16)}`}
               key={`${nft.contract}.${nft.id.tokenId}`}
             >
-              <a target="_blank">
-                <Tooltip
-                  placement="top"
-                  arrow
-                  title={
-                    <>
-                      <Typography className="">{nft.metadata.name}</Typography>
-                      <Typography className="">Click to check</Typography>
-                    </>
+              <Tooltip
+                placement="top"
+                arrow
+                title={
+                  <>
+                    <Typography className="">{nft.metadata.name}</Typography>
+                    <Typography className="">Click to check</Typography>
+                  </>
+                }
+              >
+                <img
+                  className="h-full w-full object-cover rounded-lg relative aspect-square"
+                  alt={``}
+                  src={
+                    nft.media[0].gateway ||
+                    `https://static.thenounproject.com/png/583402-200.png`
                   }
-                >
-                  <img
-                    className="h-full w-full object-cover rounded-lg relative aspect-square"
-                    alt={``}
-                    src={
-                      nft.media[0].gateway ||
-                      `https://static.thenounproject.com/png/583402-200.png`
-                    }
-                  />
-                </Tooltip>
-              </a>
+                />
+              </Tooltip>
             </Link>
           </div>
         ))}

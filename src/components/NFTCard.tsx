@@ -33,32 +33,31 @@ export default function NFTCard({ address }: { address: string }) {
             _nfts?.map((nft) => (
               <Link
                 href={`https://opensea.io/assets/${nft.contractAddress}/${nft.tokenId}`}
+                target="_blank"
               >
-                <a target="_blank">
-                  <div className="relative aspect-square ">
-                    <Tooltip
-                      placement="top"
-                      arrow
-                      title={
-                        <>
-                          <Typography className="">{nft.name}</Typography>
-                          <Typography className="">
-                            Click to check on opensea
-                          </Typography>
-                        </>
+                <div className="relative aspect-square ">
+                  <Tooltip
+                    placement="top"
+                    arrow
+                    title={
+                      <>
+                        <Typography className="">{nft.name}</Typography>
+                        <Typography className="">
+                          Click to check on opensea
+                        </Typography>
+                      </>
+                    }
+                  >
+                    <img
+                      className="h-full w-full object-cover rounded-lg"
+                      src={
+                        nft.fileUrl ||
+                        `https://static.thenounproject.com/png/583402-200.png`
                       }
-                    >
-                      <img
-                        className="h-full w-full object-cover rounded-lg"
-                        src={
-                          nft.fileUrl ||
-                          `https://static.thenounproject.com/png/583402-200.png`
-                        }
-                        alt={``}
-                      />
-                    </Tooltip>
-                  </div>
-                </a>
+                      alt={``}
+                    />
+                  </Tooltip>
+                </div>
               </Link>
             )),
           )}

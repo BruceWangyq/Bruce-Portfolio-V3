@@ -14,7 +14,7 @@ export default function guestbook() {
   useEffect(() => setMounted(true), []);
   const [newMessage, setNewMessage] = useState<string>('');
   const { config } = usePrepareContractWrite({
-    addressOrName: GuestBook.address,
+    address: GuestBook.address,
     contractInterface: GuestBook.abi,
     functionName: 'message',
     args: [newMessage],
@@ -23,7 +23,7 @@ export default function guestbook() {
   const { data, isLoading, write } = useContractWrite(config);
 
   const { data: allMessages, isLoading: isMessageLoading } = useContractRead({
-    addressOrName: GuestBook.address,
+    address: GuestBook.address,
     contractInterface: GuestBook.abi,
     functionName: 'getAllMessages',
     watch: true,
