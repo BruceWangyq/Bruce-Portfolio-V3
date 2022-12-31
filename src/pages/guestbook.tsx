@@ -6,25 +6,31 @@ import {
 } from 'wagmi';
 import GuestBook from 'contracts/abi/GuestBook.json';
 import { useCallback, useEffect, useState } from 'react';
-import { Button, TextField, Typography } from '@mui/material';
+import { Button, CircularProgress, TextField, Typography } from '@mui/material';
 import { truncatedAddress } from 'src/utils/helpers';
+
+interface Message {
+  message: string;
+  timestamp: number;
+  user: string;
+}
 
 export default function guestbook() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   const [newMessage, setNewMessage] = useState<string>('');
   const { config } = usePrepareContractWrite({
-    address: GuestBook.address,
-    contractInterface: GuestBook.abi,
+    address: GuestBook.address as any,
+    abi: GuestBook.abi,
     functionName: 'message',
     args: [newMessage],
   });
 
-  const { data, isLoading, write } = useContractWrite(config);
+  const { isLoading, write } = useContractWrite(config);
 
   const { data: allMessages, isLoading: isMessageLoading } = useContractRead({
-    address: GuestBook.address,
-    contractInterface: GuestBook.abi,
+    address: GuestBook.address as any,
+    abi: GuestBook.abi,
     functionName: 'getAllMessages',
     watch: true,
   });
@@ -36,6 +42,8 @@ export default function guestbook() {
     },
     [write],
   );
+
+  isMessageLoading && <CircularProgress />;
 
   return (
     <Container>
