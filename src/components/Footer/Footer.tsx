@@ -15,12 +15,14 @@ export default function Footer() {
           <Link
             href="https://www.linkedin.com/in/brucewangdev/"
             className="text-gray-500 hover:text-gray-600 transition"
+            target="_blank"
           >
             LinkedIn
           </Link>
           <Link
             href="mailto: brucewangyq@gmail.com"
             className="text-gray-500 hover:text-gray-600 transition"
+            target="_blank"
           >
             Contact
           </Link>
@@ -73,6 +75,7 @@ export default function Footer() {
           <Link
             href="https://cal.com/brucewang/30min"
             className="text-gray-500 hover:text-gray-600 transition"
+            target="_blank"
           >
             Let's Chat!
           </Link>
