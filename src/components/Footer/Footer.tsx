@@ -13,7 +13,7 @@ export default function Footer() {
             Home
           </Link>
           <Link
-            href="/https://www.linkedin.com/in/brucewangdev/"
+            href="https://www.linkedin.com/in/brucewangdev/"
             className="text-gray-500 hover:text-gray-600 transition"
           >
             LinkedIn
