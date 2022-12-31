@@ -10,9 +10,7 @@ import { Button, CircularProgress, TextField, Typography } from '@mui/material';
 import { truncatedAddress } from 'src/utils/helpers';
 
 interface Message {
-  message: string;
-  timestamp: number;
-  user: string;
+  allMessages: string[];
 }
 
 export default function guestbook() {
@@ -34,6 +32,8 @@ export default function guestbook() {
     functionName: 'getAllMessages',
     watch: true,
   });
+
+  console.log('allMessages', allMessages);
 
   const handleSubmit = useCallback(
     (e: any) => {
@@ -72,6 +72,7 @@ export default function guestbook() {
       </form>
 
       {mounted &&
+        allMessages instanceof Array &&
         allMessages?.map((message: any, index: number) => {
           return (
             <div key={index} className="flex flex-col  my-2 p-1 ">
