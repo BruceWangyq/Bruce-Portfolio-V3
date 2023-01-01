@@ -1,10 +1,12 @@
 import Container from 'src/components/Container';
 import ProjectCard from 'src/components/ProjectCard';
 import Image from 'next/image';
+import Hero from 'src/components/Hero';
 
 export default function Home() {
   return (
     <Container>
+      <Hero />
       <div className="flex flex-col items-center justify-center inset-0 mb-8">
         <div className="flex flex-col-reverse sm:flex-row items-start">
           <div className="flex flex-col pr-8">

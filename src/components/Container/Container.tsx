@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from 'react';
-
-import { useTheme } from 'next-themes';
+import React from 'react';
 import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
-import Link from 'next/link';
-
 import Footer from 'src/components/Footer/Footer';
 import cn from 'src/lib/classNames';
-import { ConnectButton, lightTheme } from '@rainbow-me/rainbowkit';
-import MobileMenu from '../MobileMenu';
 import Navbar from '../Navbar';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -34,6 +28,8 @@ export default function Container(props: any) {
           'relative h-full min-h-screen w-full',
           'flex flex-col',
           'motion-reduce:transition-none motion-reduce:transform-none',
+          'bg-slate-100 dark:bg-black',
+          'snap-y snap-mandatory',
         )}
       >
         <Head>
