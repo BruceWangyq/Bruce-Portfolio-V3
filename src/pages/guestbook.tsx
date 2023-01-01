@@ -8,6 +8,7 @@ import GuestBook from 'contracts/abi/GuestBook.json';
 import { useCallback, useEffect, useState } from 'react';
 import { Button, CircularProgress, TextField, Typography } from '@mui/material';
 import { truncatedAddress } from 'src/utils/helpers';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 interface Message {
   allMessages: string[];
@@ -53,6 +54,7 @@ export default function guestbook() {
       <Typography variant="body2" className="my-4 font-bold text-gray-500">
         Share a on-chain message for a future visitor of my site.
       </Typography>
+      <ConnectButton showBalance={false} />
 
       <form onSubmit={handleSubmit} className="flex flex-row my-4">
         <input
