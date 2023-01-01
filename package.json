@@ -19,6 +19,7 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.2",
     "@rainbow-me/rainbowkit": "^0.8.1",
+    "classnames": "^2.3.2",
     "eslint-config-prettier": "^8.5.0",
     "ethers": "^5.7.2",
     "next": "^13.1.1",
@@ -27,6 +28,7 @@
     "react-dom": "^18.2.0",
     "react-use": "^17.4.0",
     "swr": "^2.0.0",
+    "use-delayed-render": "^0.0.7",
     "wagmi": "^0.10.1"
   },
   "devDependencies": {
