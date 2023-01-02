@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import cn from 'src/lib/classNames';
 import MobileMenu from '../MobileMenu';
-import { motion } from 'framer-motion';
 
 function NavItem({ href, text }: { href: string; text: string }) {
   const router = useRouter();
@@ -33,34 +32,13 @@ function Navbar() {
     setMounted(true);
   }, []);
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="sticky w-full bg-gray-100/40 z-[1] filter-blur dark:bg-gray-1000/40 top-2 md:top-4 max-w-2xl px-4 py-2 rounded-md mx-auto flex justify-between items-center "
-    >
-      <motion.div
-        initial={{
-          opacity: 0,
-          x: -200,
-          scale: 0.5,
-        }}
-        animate={{
-          opacity: 1,
-          x: 0,
-          scale: 1,
-        }}
-        transition={{
-          duration: 1,
-          delay: 0.5,
-        }}
-        className="flex flex-row gap-1 text-tertiary"
-      >
+    <div className="sticky w-full bg-gray-200 z-[1] filter-blur dark:bg-gray-500/40 top-2 md:top-4 max-w-2xl px-4 py-2 rounded-xl mx-auto flex justify-between items-center border-spacing-1">
+      <div className="flex flex-row gap-1 text-tertiary">
         <MobileMenu />
         <NavItem href="/" text="Home" />
         <NavItem href="/guestbook" text="Guestbook" />
         <NavItem href="/explorer" text="Explorer" />
-      </motion.div>
+      </div>
       <div className="flex flex-row items-center space-x-4">
         <Link
           href="https://github.com/brucewangyq/"
@@ -113,7 +91,7 @@ function Navbar() {
           )}
         </button>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

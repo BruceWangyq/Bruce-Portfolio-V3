@@ -2,7 +2,90 @@ import cn from 'classnames';
 import Link from 'next/link';
 import useDelayedRender from 'use-delayed-render';
 import { useState, useEffect } from 'react';
-import styles from 'src/styles/mobile-menu.module.css';
+import styles from '../styles/mobile-menu.module.css';
+
+export default function MobileMenu() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
+    isMenuOpen,
+    {
+      enterDelay: 20,
+      exitDelay: 300,
+    },
+  );
+
+  function toggleMenu() {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+      document.body.style.overflow = '';
+    } else {
+      setIsMenuOpen(true);
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  useEffect(() => {
+    return function cleanup() {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
+  return (
+    <div className="flex flex-col">
+      <button
+        className={cn(styles.burger, 'visible md:hidden')}
+        aria-label="Toggle menu"
+        type="button"
+        onClick={toggleMenu}
+      >
+        <MenuIcon data-hide={isMenuOpen} />
+        <CrossIcon data-hide={!isMenuOpen} />
+      </button>
+      {isMenuMounted && (
+        <ul
+          className={cn(
+            styles.menu,
+            'flex flex-col absolute bg-gray-100 dark:bg-gray-900 top-12',
+            isMenuRendered && styles.menuRendered,
+          )}
+        >
+          <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold px-8"
+            style={{ transitionDelay: '150ms' }}
+          >
+            <Link href="/" className="flex w-auto pb-4">
+              Home
+            </Link>
+          </li>
+          <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold px-8"
+            style={{ transitionDelay: '175ms' }}
+          >
+            <Link href="/guestbook" className="flex w-auto pb-4">
+              Guestbook
+            </Link>
+          </li>
+          <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold px-8"
+            style={{ transitionDelay: '200ms' }}
+          >
+            <Link href="/explore" className="flex w-auto pb-4">
+              Explore
+            </Link>
+          </li>
+          <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold px-8"
+            style={{ transitionDelay: '250ms' }}
+          >
+            <Link href="/timeline" className="flex w-auto pb-4">
+              Timeline
+            </Link>
+          </li>
+        </ul>
+      )}
+    </div>
+  );
+}
 
 function MenuIcon(props: JSX.IntrinsicElements['svg']) {
   return (
@@ -50,88 +133,5 @@ function CrossIcon(props: JSX.IntrinsicElements['svg']) {
       <path d="M18 6L6 18" />
       <path d="M6 6l12 12" />
     </svg>
-  );
-}
-
-export default function MobileMenu() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
-    isMenuOpen,
-    {
-      enterDelay: 20,
-      exitDelay: 300,
-    },
-  );
-
-  function toggleMenu() {
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-      document.body.style.overflow = '';
-    } else {
-      setIsMenuOpen(true);
-      document.body.style.overflow = 'hidden';
-    }
-  }
-
-  useEffect(() => {
-    return function cleanup() {
-      document.body.style.overflow = '';
-    };
-  }, []);
-
-  return (
-    <>
-      <button
-        className={cn(styles.burger, 'visible md:hidden')}
-        aria-label="Toggle menu"
-        type="button"
-        onClick={toggleMenu}
-      >
-        <MenuIcon data-hide={isMenuOpen} />
-        <CrossIcon data-hide={!isMenuOpen} />
-      </button>
-      {isMenuMounted && (
-        <ul
-          className={cn(
-            styles.menu,
-            'flex flex-col absolute bg-gray-100 dark:bg-gray-900',
-            isMenuRendered && styles.menuRendered,
-          )}
-        >
-          <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: '150ms' }}
-          >
-            <Link href="/" className="flex w-auto pb-4">
-              Home
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: '175ms' }}
-          >
-            <Link href="/guestbook" className="flex w-auto pb-4">
-              Guestbook
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: '200ms' }}
-          >
-            <Link href="/explore" className="flex w-auto pb-4">
-              Explore
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: '250ms' }}
-          >
-            <Link href="/timeline" className="flex w-auto pb-4">
-              Timeline
-            </Link>
-          </li>
-        </ul>
-      )}
-    </>
   );
 }
