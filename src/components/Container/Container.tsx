@@ -25,11 +25,9 @@ export default function Container(props: any) {
       <div
         className={cn(
           'text-primary',
-          'relative h-full min-h-screen w-full',
+          'relative h-full min-h-screen w-full min-w-fit',
           'flex flex-col',
           'motion-reduce:transition-none motion-reduce:transform-none',
-          'bg-[#F5F5F5] dark:bg-[#232323]',
-          'snap-y snap-mandatory',
         )}
       >
         <Head>
@@ -64,12 +62,11 @@ export default function Container(props: any) {
 
         <main
           className={cn(
-            'px-4 mt-12',
+            'px-4 mt-28',
             'max-w-2xl w-full',
             'mx-auto my-auto',
             'flex flex-col justify-center gap-12',
             'divide-y divide-gray-200 dark:divide-gray-900',
-            'rounded-lg z-10',
           )}
         >
           <div>{children}</div>
