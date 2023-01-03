@@ -4,19 +4,11 @@ import Head from 'next/head';
 import Footer from 'src/components/Footer/Footer';
 import cn from 'src/lib/classNames';
 import Navbar from '../Navbar';
-import { useTheme } from 'next-themes';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Container(props: any) {
   const { children, ...customMeta } = props;
   const router = useRouter();
-  const { theme } = useTheme();
-  let imageURL = '/circle.gif';
-  if (theme === 'dark') {
-    imageURL = '/circle-dark.gif';
-  } else if (theme === 'light') {
-    imageURL = '/circle.gif';
-  }
 
   const meta = {
     title: 'Bruce Wang - Developer, Creator, Builder',
@@ -85,12 +77,6 @@ export default function Container(props: any) {
             <Footer />
           </footer>
         </main>
-
-        <img
-          src={imageURL}
-          className="fixed max-w-1/2 object-cover bg-center bg-no-repeat top-1/8 left-1/3 z-0 md:top-1/3 md:left-1/4 lg:top-1/2 lg:left-1/4 xl:top-1/3 xl:left-2/3"
-          alt=""
-        />
       </div>
     </>
   );

@@ -2,12 +2,25 @@ import Container from 'src/components/Container';
 import ProjectCard from 'src/components/ProjectCard';
 import Image from 'next/image';
 import Hero from 'src/components/Hero';
+import { useTheme } from 'next-themes';
 
 export default function Home() {
+  const { theme } = useTheme();
+  let imageURL = '/circle.gif';
+  if (theme === 'dark') {
+    imageURL = '/circle-dark.gif';
+  } else if (theme === 'light') {
+    imageURL = '/circle.gif';
+  }
   return (
     <Container>
       <Hero />
       <div className="flex flex-col items-center justify-center inset-0 mb-8">
+        {/* <img
+          src={imageURL}
+          className="absolute max-w-1/4 bottom-15  object-cover bg-center bg-no-repeat  -z-10 "
+          alt=""
+        /> */}
         <div className="flex flex-col-reverse sm:flex-row items-start">
           <div className="flex flex-col pr-8">
             <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
