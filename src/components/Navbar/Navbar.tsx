@@ -32,7 +32,7 @@ function Navbar() {
     setMounted(true);
   }, []);
   return (
-    <div className="fixed min-w-full max-w-2xl z-30 bg-gray-200 filter-blur dark:bg-gray-500/40  px-4 py-2 mx-auto flex justify-between items-center border-spacing-1">
+    <div className="fixed min-w-full max-w-2xl z-30 bg-white filter-blur dark:bg-black  px-4 py-2 mx-auto flex justify-between items-center border-spacing-1">
       <div className="flex flex-row gap-1 text-tertiary">
         <MobileMenu />
         <NavItem href="/" text="Home" />
